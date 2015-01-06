@@ -38,10 +38,6 @@ angular.module('JoclyAddon', []).controller('AppScope',
 					$scope.groupsMap[group.name]=group;
 				});
 		});
-		$scope.filterGamesCurrentGroup = function(game) {
-			var group = $scope.groupsMap[$scope.selected.groupName];
-			return group.games.indexOf(game.name)>=0;
-		}
 		$scope.login = function() {
 			self.postMessage({
 				type: "login",
@@ -199,11 +195,3 @@ angular.module('JoclyAddon').directive('joclyTimer',
 			},
 		};
 	} ]);
-
-angular.module('JoclyAddon').filter('toArray', function() { return function(obj) {
-    if (!(obj instanceof Object)) return obj;
-    var arr=[];
-    for(var key in obj)
-    	arr.push(Object.defineProperty(obj[key], '$key', {__proto__: null, value: key}));
-    return arr;
-}});
