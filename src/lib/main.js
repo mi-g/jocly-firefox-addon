@@ -13,10 +13,10 @@ const { merge } = require("sdk/util/object");
 var _ = require("sdk/l10n").get;
 var Request = require("sdk/request").Request;
 
-var fapush = require('fapush/fapush.js');
-var ui = require('ui.js');
-var hots = require('hots.js');
-var PJNParser = require('pjn-parser.js').PJNParser;
+var fapush = require('fapush/fapush');
+var ui = require('ui');
+var hots = require('hots');
+var PJNParser = require('pjn-parser').PJNParser;
 
 const _d = "draughts", _ed = "english-draughts";
 const autoGameMoves = {
@@ -170,6 +170,9 @@ pageMod.PageMod({
 	    		}
 	    		for(var gameName in message.games)
 	    			groupAll.games.push(gameName);
+	    		groupAll.games.sort(function(a,b) {
+	    			return message.games[b].popularity-message.games[a].popularity;
+	    		});
 	    		message.groups.unshift(groupAll);
 	    		simpleStorage.storage.groups = message.groups;
 	    		ui.setGames(message.games,message.groups);
