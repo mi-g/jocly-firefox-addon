@@ -1,0 +1,17 @@
+{
+  "name": "Jocly.Addon",
+  "version": "0.1.0",
+  "description": "Help building the Jocly Firefox addon.",
+  "homepage": "https://www.jocly.com/",
+  "main": "Gruntfile.js",
+  "author": "Michel Gutierrez",
+  "license": "MPL2.0",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-jison": "~1.2.1",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "jison": "~0.4.2"
+  }
+}

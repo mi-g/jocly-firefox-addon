@@ -1,0 +1,32 @@
+{
+	"name": "jocly-addon",
+	"title": "Jocly",
+	"id": "jocly",
+	"description": "Many board games to play",
+	"author": "mig@downloadhelper.net",
+	"license": "MPL 2.0",
+	"version": "1.0.0",
+	"preferences": [{
+        "name": "viewpjn",
+        "title": "Allow PJN Viewer",
+        "type": "bool",
+        "value": true
+    },{
+        "name": "animatedicon",
+        "title": "Animated active icon",
+        "type": "bool",
+        "value": true
+    },{
+        "name": "hostname",
+        "title": "Jocly hostname",
+        "type": "string",
+        "value": "www.jocly.com",
+        "hidden": true
+    },{
+        "name": "startseen",
+        "title": "Start page displayed",
+        "type": "bool",
+        "value": false,
+        "hidden": true
+    }]
+}

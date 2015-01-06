@@ -1,0 +1,85 @@
+<html>
+	<head>
+	    <meta charset="UTF-8">
+		<link href="content-style.css" type="text/css" rel="stylesheet">
+    </head>
+	<body ng-app="JoclyAddon" ng-controller="AppScope">
+		<div class="user" ng-cloak>
+			<div ng-show="!user">
+				<span data-l10n-id="not_connected"></span>
+				<a class="right" data-l10n-id="login" ng-click="login()"></a>
+			</div>
+			<div ng-show="user" class="container">
+				<div>
+					<div>
+						<img ng-src="{{user.picture}}"/>
+					</div>
+					<div class="fullsize">
+						<div class="container fullsize">
+							<div>
+								<div ng-show="userLogged">
+									<span data-l10n-id="logged"></span>
+								</div>
+								<div ng-show="!userLogged">
+									<div data-l10n-id="listening"></div>
+								</div>
+							</div>
+							<div>
+								<div>
+									<strong>{{user.name}}</strong>
+									<a ng-show="userLogged" class="right" data-l10n-id="logout" ng-click="logout()"></a>
+									<a ng-show="!userLogged" class="right" data-l10n-id="forget" ng-click="forget()"></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hots">
+			<div class="hot container" ng-repeat="(id,table) in hots" ng-click="selectTable(table)">
+				<div>
+					<div><img ng-src="{{games[table.game].thumbnail}}"/></div>
+					<div class="fullsize">
+						<div class="container fullsize">
+							<div>
+								<div>{{table.text}}</div>
+							</div>
+							<div ng-show="table.status=='playing'">
+								<div>
+									<span jocly-timer="{mode:'countdown',run:'true',model:'table.expiry'}"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div><img ng-src="{{table.creator.picture}}"/></div>
+				</div>
+			</div>
+		</div>
+		<div class="groups" ng-cloak>
+			<select ng-model="selected.groupName" ng-options="group.name as group.title for group in groups"></select>
+		</div>
+		<div class="games" ng-cloak">
+			<div class="game container" ng-repeat="game in games | toArray | filter:filterGamesCurrentGroup | orderBy:'popularity':-1" ng-click="selectGame(game.name)">
+				<div>
+					<div><img ng-src="{{game.thumbnail}}"/></div>
+					<div class="fullsize">
+						<div class="container fullsize">
+							<div>
+								<div>
+									<h1>{{game.title}}</h1>
+								</div>
+							</div>
+							<div>
+								<div>
+									<h2>{{game.summary}}</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</body>
+</html>

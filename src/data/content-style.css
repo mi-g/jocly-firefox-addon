@@ -1,0 +1,113 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	display: none !important;
+}
+
+[ng-click] {
+	cursor: pointer;
+}
+
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+
+body {
+	padding: 0px;
+}
+h1 {
+	margin: 0;
+	font-size: 12pt;
+	font-weight: bold;
+}
+h2 {
+	margin: 0;
+	font-size: 10pt;
+	font-weight: normal;
+}
+a {
+	color: Blue;
+}
+.hidden {
+	display: none;
+}
+.right {
+	float: right;
+}
+.container {
+	display: table;
+	table-layout: fixed;
+}
+
+.container > * {
+	display: table-row;
+}
+
+.container > * > * {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.fullsize {
+	width: 100%;
+	height: 100%;
+}
+.game {
+	margin: 4px 0 4px 0;
+	background-color: White;
+}
+.game img {
+	width: 60px;
+	height: 60px;
+}
+.user {
+	background-color: #fff;
+	border-radius: 5px;
+	padding: 5px;
+	margin-bottom: 8px;
+	width: 282px;
+}
+.user img {
+	width: 40px;
+}
+.game h2 {
+	font-style: italic;
+}
+.hot.container {
+	background-color: #e5ffcd;
+	border-radius: 5px;
+	padding: 5px;
+	margin-bottom: 8px;
+	overflow: hidden;
+}
+.hot img {
+	width: 40px;
+}
+.groups {
+	background: url(select-bk.png) no-repeat 96% 0;
+	height: 29px;
+	overflow: hidden;
+	background-color: #333;
+	border-radius: 5px;
+	width: 282px;
+	margin-bottom: 8px;
+}
+.groups select {
+	width: 300px;
+	background: transparent;
+	border: none;
+	font-size: 14px;
+	height: 29px;
+	padding: 5px;
+	color: rgba(0,0,0,0);
+	text-shadow: 0 0 0 #fff;
+ }
+
+select::-moz-focus-inner {
+  border: 0;
+}
+
+
