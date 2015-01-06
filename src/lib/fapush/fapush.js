@@ -163,7 +163,7 @@ var listener = {
 		});
 		wssChan.sendMsg(helloMsg);
 	},
-	onStop(aContext, aStatusCode) {
+	onStop: function(aContext, aStatusCode) {
 		connected = false;
 		wssChan = null;
 		SetTimerRetry();
