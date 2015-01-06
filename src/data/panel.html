@@ -60,19 +60,19 @@
 			<select ng-model="selected.groupName" ng-options="group.name as group.title for group in groups"></select>
 		</div>
 		<div class="games" ng-cloak">
-			<div class="game container" ng-repeat="game in games | toArray | filter:filterGamesCurrentGroup | orderBy:'popularity':-1" ng-click="selectGame(game.name)">
+			<div class="game container" ng-repeat="game in groupsMap[selected.groupName].games" ng-click="selectGame(game)">
 				<div>
-					<div><img ng-src="{{game.thumbnail}}"/></div>
+					<div><img ng-src="{{games[game].thumbnail}}"/></div>
 					<div class="fullsize">
 						<div class="container fullsize">
 							<div>
 								<div>
-									<h1>{{game.title}}</h1>
+									<h1>{{games[game].title}}</h1>
 								</div>
 							</div>
 							<div>
 								<div>
-									<h2>{{game.summary}}</h2>
+									<h2>{{games[game].summary}}</h2>
 								</div>
 							</div>
 						</div>
