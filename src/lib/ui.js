@@ -12,9 +12,9 @@ var windowUtils = require("sdk/window/utils");
 var simplePrefs = require('sdk/simple-prefs');
 var _ = require("sdk/l10n").get;
 var notifications = require("sdk/notifications");
-var hots = require('hots.js');
 var querystring= require('sdk/querystring');
 var { Cc, Ci } = require("chrome");
+var hots = require('hots');
 
 var ui = {
 	actionButton: null,
